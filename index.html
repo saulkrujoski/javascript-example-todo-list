@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/images/favicon.svg" type="image//svg+xml">
+    <title>TODO List Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <div class="container pt-4">
+        <header class="mb-3">
+            <h1>To-Do List</h1>
+            <form id="task-form" action="#">
+                <input class="form-control form-control-lg" type="text" placeholder="Add Work" aria-label="Add Work"
+                    id="task-form-description" name="task-form-description">
+            </form>
+        </header>
+
+        <div id="state-tabs" class="btn-group btn-group-lg d-flex p-2" role="group" aria-label="Estados de las tareas">
+            <input type="radio" class="btn-check" name="btnStateRadio" id="btn-radio-all" autocomplete="off" checked>
+            <label class="btn btn-outline-secondary" for="btn-radio-all"><i class="bi bi-list-task text-dark"></i>
+                All</label>
+
+            <input type="radio" class="btn-check" name="btnStateRadio" id="btnRadioToDo" autocomplete="off">
+            <label class="btn btn-outline-secondary text-primary" for="btnRadioToDo"><i
+                    class="bi bi-check2 text-primary"></i> To
+                Do</label>
+
+            <input type="radio" class="btn-check" name="btnStateRadio" id="btnRadioDoing" autocomplete="off">
+            <label class="btn btn-outline-secondary text-warning" for="btnRadioDoing"><i
+                    class="bi bi-person-workspace text-warning"></i>
+                Doing</label>
+
+            <input type="radio" class="btn-check" name="btnStateRadio" id="btnRadioDone" autocomplete="off">
+            <label class="btn btn-outline-secondary text-success" for="btnRadioDone"><i
+                    class="bi bi-check2-all text-success"></i>
+                Done</label>
+        </div>
+
+        <div class="mb-3">
+            <form class="row flex-row" id="filter-tasks-form" action="#">
+                <div class="col-sm-11">
+                    <input class="form-control form-control-lg" type="text" placeholder="Filter tasks with keywords"
+                        aria-label="Filter tasks with keywords" id="filter-tasks-form-term"
+                        name="filter-tasks-form-term">
+                </div>
+                <div class="col-sm-1 text-end pt-1">
+                    <button type="reset" class="btn btn-secondary"><i class="bi bi-arrow-clockwise"></i></button>
+                </div>
+            </form>
+        </div>
+
+        <div class="text-center visually-hidden" id="loadingSpinner">
+            <div class="spinner-grow" role="status"></div>
+        </div>
+
+        <main id="main-content" class="p-2">
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./classes/state.js"></script>
+    <script src="./classes/task.js"></script>
+    <script src="./scripts/const.js"></script>
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/messageManager.js"></script>
+    <script src="./scripts/statesController.js"></script>
+    <script src="./scripts/tasksController.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>
